@@ -35,38 +35,31 @@ class SubscriptionServiceProvider extends ServiceProvider {
         });
 
         $this->app->bind('moip-plans', function(){
-            return $this->app('moip-api')->plans();
+            return app('moip-api')->plans();
         });
 
         $this->app->bind('moip-subscriptions', function(){
-            return $this->app('moip-api')->subscriptions();
+            return app('moip-api')->subscriptions();
         });
 
         $this->app->bind('moip-customers', function(){
-            return $this->app('moip-api')->customers();
+            return app('moip-api')->customers();
         });
 
         $this->app->bind('moip-invoices', function(){
-            return $this->app('moip-api')->invoices();
+            return app('moip-api')->invoices();
         });
 
         $this->app->bind('moip-preferences', function(){
-            return $this->app('moip-api')->preferences();
+            return app('moip-api')->preferences();
         });
 
         $this->app->bind('moip-payments', function(){
-            return $this->app('moip-api')->payments();
+            return app('moip-api')->payments();
         });
 
-        $this->app->alias('MoipPlanos'          , __NAMESPACE__.'Facades\\MoipPlanos');
-        $this->app->alias('MoipClientes'        , __NAMESPACE__.'Facades\\MoipClientes');
-        $this->app->alias('MoipFaturas'         , __NAMESPACE__.'Facades\\MoipFaturas');
-        $this->app->alias('MoipPagamentos'      , __NAMESPACE__.'Facades\\MoipPagamentos');
-        $this->app->alias('MoipPreferencias'    , __NAMESPACE__.'Facades\\MoipPreferencias');
-        $this->app->alias('MoipAssinaturas'     , __NAMESPACE__.'Facades\\MoipAssinaturas');
-
         $this->publishes([
-            __DIR__.'/../../config/moip-assinaturas.php' => config_path('moip-assinaturas.php'),
+            __DIR__.'/../../../config/moip-assinaturas.php' => config_path('moip-assinaturas.php'),
         ]);
     }
 }

@@ -19,7 +19,7 @@ Issue composer update
 
 ### Laravel 5
 
-Add to app/config/app.php service provider array:
+Add to config/app.php service provider array:
 
 ```php
     'Prettus\MoipLaravel\Subscription\SubscriptionServiceProvider',
@@ -43,6 +43,16 @@ Publish Configuration
 
 ```shell
 php artisan config:publish prettus/moip-assinaturas-laravel
+```
+
+### Alias
+
+```php
+'MoipPlanos'        => 'Prettus\MoipLaravel\Subscription\Facades\MoipPlanos',
+'MoipFaturas'       => 'Prettus\MoipLaravel\Subscription\Facades\MoipFaturas',
+'MoipPagamentos'    => 'Prettus\MoipLaravel\Subscription\Facades\MoipPagamentos',
+'MoipPreferencias'  => 'Prettus\MoipLaravel\Subscription\Facades\MoipPreferencias',
+'MoipAssinaturas'   => 'Prettus\MoipLaravel\Subscription\Facades\MoipAssinaturas',
 ```
 
 ## Facades

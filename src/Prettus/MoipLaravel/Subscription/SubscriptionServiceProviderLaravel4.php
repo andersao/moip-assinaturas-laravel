@@ -22,7 +22,7 @@ class SubscriptionServiceProviderLaravel4 extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('prettus/moip-assinaturas-laravel', 'moip-assinaturas', __DIR__.'/../../' );
+        $this->package('prettus/moip-assinaturas-laravel', 'moip-assinaturas', __DIR__.'/../../../' );
 
         $this->app->singleton('moip-client', function(){
             return new MoipClient(
@@ -33,39 +33,31 @@ class SubscriptionServiceProviderLaravel4 extends ServiceProvider {
         });
 
         $this->app->singleton('moip-api', function(){
-            return new Api( $this->app('moip-client') );
+            return new Api( app('moip-client') );
         });
 
         $this->app->bind('moip-plans', function(){
-            return $this->app('moip-api')->plans();
+            return app('moip-api')->plans();
         });
 
         $this->app->bind('moip-subscriptions', function(){
-            return $this->app('moip-api')->subscriptions();
+            return app('moip-api')->subscriptions();
         });
 
         $this->app->bind('moip-customers', function(){
-            return $this->app('moip-api')->customers();
+            return app('moip-api')->customers();
         });
 
         $this->app->bind('moip-invoices', function(){
-            return $this->app('moip-api')->invoices();
+            return app('moip-api')->invoices();
         });
 
         $this->app->bind('moip-preferences', function(){
-            return $this->app('moip-api')->preferences();
+            return app('moip-api')->preferences();
         });
 
         $this->app->bind('moip-payments', function(){
-            return $this->app('moip-api')->payments();
+            return app('moip-api')->payments();
         });
-
-        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-        $loader->alias('MoipPlanos'          , __NAMESPACE__.'Facades\\MoipPlanos');
-        $loader->alias('MoipClientes'        , __NAMESPACE__.'Facades\\MoipClientes');
-        $loader->alias('MoipFaturas'         , __NAMESPACE__.'Facades\\MoipFaturas');
-        $loader->alias('MoipPagamentos'      , __NAMESPACE__.'Facades\\MoipPagamentos');
-        $loader->alias('MoipPreferencias'    , __NAMESPACE__.'Facades\\MoipPreferencias');
-        $loader->alias('MoipAssinaturas'     , __NAMESPACE__.'Facades\\MoipAssinaturas');
     }
 }
