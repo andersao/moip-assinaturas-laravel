@@ -31,7 +31,7 @@ class SubscriptionServiceProvider extends ServiceProvider {
         });
 
         $this->app->singleton('moip-api', function(){
-            return new Api( $this->app('moip-client') );
+            return new Api( app('moip-client') );
         });
 
         $this->app->bind('moip-plans', function(){

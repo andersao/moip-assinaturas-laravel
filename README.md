@@ -1,4 +1,4 @@
-# Moip Assinaturas - Laravel 5
+# Moip Assinaturas - Laravel
 
 ## Installation
 
