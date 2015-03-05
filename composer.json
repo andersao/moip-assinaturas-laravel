@@ -1,0 +1,27 @@
+{
+  "name": "prettus/moip-assinaturas-laravel",
+  "description": "Laravel - Integração com a API de Assinatura da Moip",
+  "license": "MIT",
+  "keywords": ["laravel" , "moip", "assinaturas", "pagamentos", "subscriptions", "payments"],
+  "authors": [
+    {
+      "name": "Anderson Andrade",
+      "email": "contato@andersonandra.de"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "prettus/moip-assinaturas-php":"dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "Prettus\\MoipLaravel\\Subscription": "src/",
+      "Prettus\\MoipLaravel\\Subscription\\Test": "tests/"
+    }
+  },
+  "minimum-stability": "stable"
+}
