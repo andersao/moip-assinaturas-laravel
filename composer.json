@@ -11,6 +11,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
+    "illuminate/support": "5.0.*|5.1.*",
     "prettus/moip-assinaturas-php":"dev-master"
   },
   "require-dev": {
